@@ -1,0 +1,1 @@
+This is vanilla js calculator task for innowise group
