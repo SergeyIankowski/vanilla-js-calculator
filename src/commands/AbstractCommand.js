@@ -1,6 +1,7 @@
 export default class AbstractCommand {
-    constructor(stringValue) {
-        this.secondValue = +stringValue;
+    constructor(stringFirstValue, stringSecondValue) {
+        this.firstValue = +stringFirstValue;
+        this.secondValue = +stringSecondValue;
     }
 
     execute() {
@@ -8,6 +9,12 @@ export default class AbstractCommand {
     }
 
     undo() {
-        throw new Error(`this is abstract class${this}, method 'undo()' must be implemented`);
+        return this.firstValue;
+    }
+
+    needSecondValue() {
+        throw new Error(
+            `this is abstract class${this}, method 'needSecondValue()' must be implemented`
+        );
     }
 }
