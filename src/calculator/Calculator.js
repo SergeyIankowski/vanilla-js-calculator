@@ -5,7 +5,7 @@ export default class Calculator {
     }
 
     executeCommand(command) {
-        const newValue = command.execute(this.value);
+        const newValue = command.execute();
         this.value = newValue;
         if (newValue) {
             this.history.push(command);
