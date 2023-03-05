@@ -1,6 +1,7 @@
 import buttonsNames from './buttonsNames';
 
 const numberKeys = [
+    buttonsNames.zero,
     buttonsNames.one,
     buttonsNames.two,
     buttonsNames.three,
@@ -10,7 +11,6 @@ const numberKeys = [
     buttonsNames.seven,
     buttonsNames.eight,
     buttonsNames.nine,
-    buttonsNames.zero,
 ];
 
 export default numberKeys;
