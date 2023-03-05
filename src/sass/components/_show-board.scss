@@ -1,0 +1,14 @@
+.show-board {
+  height: 70px;
+  font: normal bold 30px/120% 'Roboto', sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+@media (max-width: 700px) {
+  .show-board {
+    height: 20%;
+    font: normal bold 50px/120% 'Roboto', sans-serif;
+  }
+}
