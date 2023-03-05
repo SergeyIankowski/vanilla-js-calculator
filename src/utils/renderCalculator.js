@@ -21,9 +21,9 @@ export default function renderCalculator(arr) {
         themes.append(themeButton);
     });
 
-    const calculatorBoard = document.createElement('input');
-    calculatorBoard.type = 'text';
-    calculatorBoard.classList.add('calculator__board');
+    const calculatorBoard = document.createElement('div');
+    // calculatorBoard.type = 'text';
+    calculatorBoard.classList.add('calculator__board', 'show-board');
 
     const calculatorButtons = document.createElement('div');
     calculatorButtons.classList.add('calculator__buttons', 'buttons-container__layout');
