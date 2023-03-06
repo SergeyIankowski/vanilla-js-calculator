@@ -1,4 +1,4 @@
-import calculateFactorial from '../utils/calculateFactorial';
+import calculateFactorial from '../utils/calculate-functions/calculateFactorial';
 import AbstractCommand from './AbstractCommand';
 
 export default class FactorialCommand extends AbstractCommand {
