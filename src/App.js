@@ -163,12 +163,14 @@ export default class App {
 
     addValue(value) {
         const strValue = `${value}`;
+        if (this.firstValue === '0') {
+            this.firstValue = '';
+        }
         if (this.command && this.firstValue) {
             this.secondValue = this.secondValue ? `${this.secondValue}${strValue}` : strValue;
             return;
         }
         this.firstValue = this.firstValue ? `${this.firstValue}${strValue}` : strValue;
-        console.log(this.firstValue, this.command, this.secondValue);
     }
 
     addCommand(command) {
