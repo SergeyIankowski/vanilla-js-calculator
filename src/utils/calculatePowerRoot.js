@@ -1,11 +1,11 @@
 const calculatePowerRoot = (number, power) => {
-    let cbrt = number / power;
+    let powValue = number / power;
     let temp = 0;
-    while (cbrt !== temp) {
-        temp = cbrt;
-        cbrt = (number / (temp * temp) + temp * 2) / 3;
+    while (powValue !== temp) {
+        temp = powValue;
+        powValue = (number / (temp * temp) + temp * 2) / 3;
     }
-    return cbrt;
+    return powValue;
 };
 
 export default calculatePowerRoot;
