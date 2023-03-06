@@ -3,7 +3,7 @@ import buttonsNames from './buttonsNames';
 const buttonsLayout = [
     [
         buttonsNames.memoryAdd,
-        buttonsNames.memorySubtract,
+        buttonsNames.memorySubstract,
 
         buttonsNames.allClean,
         buttonsNames.changeSign,

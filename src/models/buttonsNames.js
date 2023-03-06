@@ -1,7 +1,7 @@
 const buttonsNames = {
     memoryClear: 'MC',
     memoryAdd: 'M+',
-    memorySubtract: 'M-',
+    memorySubstract: 'M-',
     memoryRecall: 'MR',
     allClean: 'AC',
     changeSign: '+/-',
