@@ -11,8 +11,17 @@ import SquareRootCommand from './SquareRootCommand';
 import CubeRootCommand from './CubeRootCommand';
 import PowerRootCommand from './PowerRootCommand';
 import FactorialCommand from './FactorialCommand';
+import AnyPowerCommand from './AnyPowerCommand';
+import MemoryAddCommand from './MemoryAddCommand';
+import MemoryRecallCommand from './MemoryRecallCommand';
+import MemorySubstractCommand from './MemorySubstractCommand';
+import MemoryClearCommand from './MemoryClearCommand';
 
 export {
+    MemoryAddCommand,
+    MemoryRecallCommand,
+    MemorySubstractCommand,
+    MemoryClearCommand,
     AddCommand,
     SubstractCommand,
     MultiplyCommand,
@@ -26,4 +35,5 @@ export {
     CubeRootCommand,
     PowerRootCommand,
     FactorialCommand,
+    AnyPowerCommand,
 };
