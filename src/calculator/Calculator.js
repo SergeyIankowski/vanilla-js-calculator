@@ -1,3 +1,5 @@
+import deletePeriodicDigits from '../utils/deletePeriodicDigits';
+
 export default class Calculator {
     constructor() {
         this.value = null;
@@ -6,7 +8,7 @@ export default class Calculator {
 
     executeCommand(command) {
         const newValue = command.execute();
-        this.value = newValue;
+        this.value = deletePeriodicDigits(newValue);
         if (newValue) {
             this.history.push(command);
         }
