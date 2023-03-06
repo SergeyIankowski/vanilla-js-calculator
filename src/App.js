@@ -12,12 +12,16 @@ import {
     SquareRootCommand,
     SubstractCommand,
     TenPowerCommand,
+    AnyPowerCommand,
+    MemoryAddCommand,
+    MemoryRecallCommand,
+    MemorySubstractCommand,
+    MemoryClearCommand,
 } from './commands';
-import AnyPowerCommand from './commands/AnyPowerCommand';
 import buttonsNames from './models/buttonsNames';
 import numberKeys from './models/numberKeys';
+import operatorsStrings from './models/operatorsStrings';
 import addClickCallbackToNode from './utils/addCallbackToNode';
-import getNameFromValue from './utils/getNameFromValue';
 import getNamesArrFromValues from './utils/getNamesArrFromValues';
 
 export default class App {
@@ -40,85 +44,115 @@ export default class App {
             });
         });
 
-        const AC = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.allClean));
+        const memoryAdd = setBtnSelector('memoryAdd');
+        addClickCallbackToNode(this.UINode, memoryAdd, () => {
+            this.addCommand(MemoryAddCommand);
+            this.calculate();
+            this.reRenderBoard();
+        });
+
+        const memoryClear = setBtnSelector('memoryClear');
+        addClickCallbackToNode(this.UINode, memoryClear, () => {
+            this.addCommand(MemoryClearCommand);
+            this.calculate();
+            this.reRenderBoard();
+        });
+
+        const memorySubstract = setBtnSelector('memorySubstract');
+        addClickCallbackToNode(this.UINode, memorySubstract, () => {
+            this.addCommand(MemorySubstractCommand);
+            this.calculate();
+            this.reRenderBoard();
+        });
+
+        const memoryRecall = setBtnSelector('memoryRecall');
+        addClickCallbackToNode(this.UINode, memoryRecall, () => {
+            this.addCommand(MemoryRecallCommand);
+            this.calculate();
+            this.reRenderBoard();
+        });
+
+        const AC = setBtnSelector('allClean');
         addClickCallbackToNode(this.UINode, AC, () => {
             this.clean();
             this.reRenderBoard();
         });
 
-        const equal = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.equal));
-        addClickCallbackToNode(this.UINode, equal, () => this.calculate());
+        const equal = setBtnSelector('equal');
+        addClickCallbackToNode(this.UINode, equal, () => {
+            this.calculate();
+        });
 
-        const dot = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.dot));
+        const dot = setBtnSelector('dot');
         addClickCallbackToNode(this.UINode, dot, () => {
             this.pastDotToValue();
             this.reRenderBoard();
         });
 
-        const changeSign = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.changeSign));
+        const changeSign = setBtnSelector('changeSign');
         addClickCallbackToNode(this.UINode, changeSign, () => {
             this.changeSign();
             this.reRenderBoard();
         });
 
-        const plus = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.plus));
+        const plus = setBtnSelector('plus');
         addClickCallbackToNode(this.UINode, plus, () => this.addCommand(AddCommand));
 
-        const minus = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.minus));
+        const minus = setBtnSelector('minus');
         addClickCallbackToNode(this.UINode, minus, () => this.addCommand(SubstractCommand));
 
-        const multiply = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.multiply));
+        const multiply = setBtnSelector('multiply');
         addClickCallbackToNode(this.UINode, multiply, () => this.addCommand(MultiplyCommand));
 
-        const divide = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.divide));
+        const divide = setBtnSelector('divide');
         addClickCallbackToNode(this.UINode, divide, () => this.addCommand(DivideCommand));
 
-        const percent = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.percent));
+        const percent = setBtnSelector('percent');
         addClickCallbackToNode(this.UINode, percent, () => {
             this.addCommand(PercentCommand);
             this.calculate();
         });
 
-        const square = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.square));
+        const square = setBtnSelector('square');
         addClickCallbackToNode(this.UINode, square, () => {
             this.addCommand(SquareCommand);
             this.calculate();
         });
-        const cube = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.cube));
+        const cube = setBtnSelector('cube');
         addClickCallbackToNode(this.UINode, cube, () => {
             this.addCommand(CubeCommand);
             this.calculate();
         });
-        const numberPower = setBtnSelector(
-            getNameFromValue(buttonsNames, buttonsNames.numberPower)
-        );
+        const numberPower = setBtnSelector('numberPower');
         addClickCallbackToNode(this.UINode, numberPower, () => {
             this.addCommand(AnyPowerCommand);
+            this.calculate();
         });
-        const tenPower = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.tenPower));
+        const tenPower = setBtnSelector('tenPower');
         addClickCallbackToNode(this.UINode, tenPower, () => {
             this.addCommand(TenPowerCommand);
+            this.calculate();
         });
-        const reverse = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.reverse));
+        const reverse = setBtnSelector('reverse');
         addClickCallbackToNode(this.UINode, reverse, () => {
             this.addCommand(ReverseNumberCommand);
             this.calculate();
         });
-        const squareRoot = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.squareRoot));
+        const squareRoot = setBtnSelector('squareRoot');
         addClickCallbackToNode(this.UINode, squareRoot, () => {
             this.addCommand(SquareRootCommand);
             this.calculate();
         });
-        const cubeRoot = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.cubeRoot));
+        const cubeRoot = setBtnSelector('cubeRoot');
         addClickCallbackToNode(this.UINode, cubeRoot, () => {
             this.addCommand(CubeRootCommand);
             this.calculate();
         });
-        const powerRoot = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.powerRoot));
+        const powerRoot = setBtnSelector('powerRoot');
         addClickCallbackToNode(this.UINode, powerRoot, () => {
             this.addCommand(PowerRootCommand);
         });
-        const factorial = setBtnSelector(getNameFromValue(buttonsNames, buttonsNames.factorial));
+        const factorial = setBtnSelector('factorial');
         addClickCallbackToNode(this.UINode, factorial, () => {
             this.addCommand(FactorialCommand);
             this.calculate();
@@ -129,16 +163,18 @@ export default class App {
 
     addValue(value) {
         const strValue = `${value}`;
-        if (this.command) {
+        if (this.command && this.firstValue) {
             this.secondValue = this.secondValue ? `${this.secondValue}${strValue}` : strValue;
             return;
         }
         this.firstValue = this.firstValue ? `${this.firstValue}${strValue}` : strValue;
+        console.log(this.firstValue, this.command, this.secondValue);
     }
 
     addCommand(command) {
-        if (this.command) this.calculate();
+        if (this.command && this.secondValue) this.calculate();
         this.command = command;
+        this.reRenderBoard();
     }
 
     calculate() {
@@ -164,8 +200,7 @@ export default class App {
     pastDotToValue() {
         if (this.secondValue && !`${this.secondValue}`.includes('.')) {
             this.secondValue += '.';
-        }
-        if (!`${this.firstValue}`.includes('.')) {
+        } else if (!`${this.firstValue}`.includes('.')) {
             this.firstValue += '.';
         }
     }
@@ -185,11 +220,26 @@ export default class App {
     }
 
     reRenderBoard() {
-        const board = this.UINode.querySelector('.show-board');
-        if (!this.firstValue) {
-            board.innerText = '';
+        const activeValue = this.UINode.querySelector('.show-board__active-value');
+        const notActiveValue = this.UINode.querySelector('.show-board__not-active-value');
+        const operator = this.UINode.querySelector('.show-board__operator');
+
+        if (!this.firstValue && !this.operator && !this.secondValue) {
+            activeValue.innerText = '';
+            operator.innerText = '';
+            notActiveValue.innerText = '';
             return;
         }
-        board.innerText = this.secondValue ? this.secondValue : this.firstValue;
+        if (this.firstValue && !this.command && !this.secondValue) {
+            activeValue.innerText = this.firstValue;
+            operator.innerText = '';
+            notActiveValue.innerText = '';
+            return;
+        }
+        if (this.firstValue && this.command) {
+            activeValue.innerText = this.secondValue ? this.secondValue : '';
+            notActiveValue.innerText = this.firstValue;
+            operator.innerText = operatorsStrings.get(this.command);
+        }
     }
 }
