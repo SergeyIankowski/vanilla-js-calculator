@@ -21,9 +21,23 @@ export default function renderCalculator(arr) {
         themes.append(themeButton);
     });
 
-    const calculatorBoard = document.createElement('input');
-    calculatorBoard.type = 'text';
-    calculatorBoard.classList.add('calculator__board');
+    const calculatorBoard = document.createElement('div');
+    calculatorBoard.classList.add('calculator__board', 'show-board');
+
+    const showBoardActive = document.createElement('div');
+    showBoardActive.classList.add('show-board__active-value');
+
+    const showBoardTopContainer = document.createElement('div');
+    showBoardTopContainer.classList.add('show-board__top-container');
+
+    const showBoardNotActiveValue = document.createElement('div');
+    showBoardNotActiveValue.classList.add('show-board__not-active-value');
+
+    const showBoardOperator = document.createElement('div');
+    showBoardOperator.classList.add('show-board__operator');
+
+    showBoardTopContainer.append(showBoardNotActiveValue, showBoardOperator);
+    calculatorBoard.append(showBoardTopContainer, showBoardActive);
 
     const calculatorButtons = document.createElement('div');
     calculatorButtons.classList.add('calculator__buttons', 'buttons-container__layout');

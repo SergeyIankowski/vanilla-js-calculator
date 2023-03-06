@@ -1,0 +1,24 @@
+.show-board {
+  height: 80px;
+  padding-right: 5px;
+  font: normal bold 30px/120% 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+}
+.show-board__top-container {
+  display: flex;
+  font: normal bold 15px/120% 'Roboto', sans-serif;
+  color: grey;
+}
+@media (max-width: 700px) {
+  .show-board {
+    height: 40%;
+    font: normal bold 50px/120% 'Roboto', sans-serif;
+  }
+  .show-board__top-container {
+    font: normal bold 25px/120% 'Roboto', sans-serif;
+}
+}

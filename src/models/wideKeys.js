@@ -4,7 +4,7 @@ export const wideKeys = [
     buttonsNames.memoryAdd,
     buttonsNames.memoryClear,
     buttonsNames.memoryRecall,
-    buttonsNames.memorySubtract,
+    buttonsNames.memorySubstract,
     buttonsNames.zero,
 ];
 

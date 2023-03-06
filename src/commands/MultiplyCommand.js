@@ -1,13 +1,11 @@
 import AbstractCommand from './AbstractCommand';
 
 export default class MultiplyCommand extends AbstractCommand {
-    execute(stringValue) {
-        const value = +stringValue;
-        return `${value ? value * this.secondValue : value}`;
+    execute() {
+        return `${this.firstValue * this.secondValue}`;
     }
 
-    undo(stringValue) {
-        const value = +stringValue;
-        return value / this.secondValue;
+    static needSecondValue() {
+        return true;
     }
 }
