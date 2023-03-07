@@ -10,13 +10,14 @@ export default class Calculator {
         if (newValue) {
             this.history.push(command);
         }
-        console.log(this.history);
     }
 
     undo() {
         const command = this.history.pop();
         if (command) {
             this.value = command.undo(this.value);
+        } else {
+            this.value = null;
         }
     }
 }

@@ -31,6 +31,7 @@ const buttonsNames = {
     cubeRoot: `\u{0221B}x`,
     powerRoot: `x\u{0221A}y`,
     factorial: '!x',
+    returnToPrevResult: 'return to prev calc',
 };
 
 export default buttonsNames;
