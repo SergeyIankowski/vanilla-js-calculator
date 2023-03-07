@@ -75,6 +75,7 @@ export default class App {
         const AC = setBtnSelector('allClean');
         addClickCallbackToNode(this.UINode, AC, () => {
             this.clean();
+            this.calculator.history = [];
             this.reRenderBoard();
         });
 

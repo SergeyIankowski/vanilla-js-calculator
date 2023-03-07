@@ -9,7 +9,8 @@ const deletePeriodicDigits = (strNumber) => {
     ) {
         roundedNumbStr = roundedNumbStr.substring(0, roundedNumbStr.length - 1);
     }
-    return roundedNumbStr;
+    const roundedNumb = +roundedNumbStr;
+    return roundedNumb;
 };
 
 export default deletePeriodicDigits;

@@ -1,4 +1,4 @@
-import calculatePowerRoot from '../utils/calculatePowerRoot';
+import calculatePowerRoot from '../utils/calculate-functions/calculatePowerRoot';
 import AbstractCommand from './AbstractCommand';
 
 export default class PowerRootCommand extends AbstractCommand {
