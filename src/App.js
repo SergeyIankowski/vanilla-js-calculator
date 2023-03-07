@@ -78,6 +78,12 @@ export default class App {
             this.calculator.history = [];
             this.reRenderBoard();
         });
+        const returnPrevCalc = setBtnSelector('returnToPrevResult');
+        addClickCallbackToNode(this.UINode, returnPrevCalc, () => {
+            this.calculator.undo();
+            this.refreshAppValues();
+            this.reRenderBoard();
+        });
 
         const equal = setBtnSelector('equal');
         addClickCallbackToNode(this.UINode, equal, () => {

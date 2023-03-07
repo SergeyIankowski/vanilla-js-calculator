@@ -41,7 +41,13 @@ const buttonsLayout = [
         buttonsNames.three,
         buttonsNames.plus,
     ],
-    [buttonsNames.factorial, buttonsNames.zero, buttonsNames.dot, buttonsNames.equal],
+    [
+        buttonsNames.factorial,
+        buttonsNames.returnToPrevResult,
+        buttonsNames.zero,
+        buttonsNames.dot,
+        buttonsNames.equal,
+    ],
 ];
 
 export default buttonsLayout;

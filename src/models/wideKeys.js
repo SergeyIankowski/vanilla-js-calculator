@@ -6,6 +6,8 @@ export const wideKeys = [
     buttonsNames.memoryRecall,
     buttonsNames.memorySubstract,
     buttonsNames.zero,
+    buttonsNames.factorial,
+    buttonsNames.returnToPrevResult,
 ];
 
-export const extraWideKeys = [buttonsNames.factorial];
+export const extraWideKeys = [];
