@@ -1,7 +1,7 @@
 import deletePeriodicDigits from '../deletePeriodicDigits';
 
-const reverseValue = (value) => {
-    const res = 1 / value;
+const calculateMultiplying = (a, b) => {
+    const res = a * b;
     return deletePeriodicDigits(res);
 };
-export default reverseValue;
+export default calculateMultiplying;

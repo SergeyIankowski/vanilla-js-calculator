@@ -3,7 +3,8 @@ import AbstractCommand from './AbstractCommand';
 
 export default class DivideCommand extends AbstractCommand {
     execute() {
-        return `${calculateDivision(this.firstValue, this.secondValue)}`;
+        const result = calculateDivision(this.firstValue, this.secondValue);
+        return Number.isFinite(result) ? `${result}` : 'Not divisible by zero';
     }
 
     static needSecondValue() {

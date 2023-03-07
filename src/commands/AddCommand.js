@@ -1,4 +1,4 @@
-import calculateSum from '../utils/calculate-functions/calculate-sum';
+import calculateSum from '../utils/calculate-functions/calculateSum';
 import AbstractCommand from './AbstractCommand';
 
 export default class AddCommand extends AbstractCommand {
