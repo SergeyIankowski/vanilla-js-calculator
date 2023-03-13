@@ -1,0 +1,9 @@
+.buttons-container__layout {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    align-content: stretch;
+    gap: 2px;
+    width: 100%;
+    height: 100%;
+}
