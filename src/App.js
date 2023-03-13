@@ -34,7 +34,7 @@ export default class App {
         this.secondValue = null;
     }
 
-    createUI() {
+    createUI(targetNode) {
         const setBtnSelector = (str) => `.calculator__button_${str}`;
         const buttonsDigitsNamesArr = getNamesArrFromValues(buttonsNames, numberKeys);
         buttonsDigitsNamesArr.forEach((digName, index) => {
@@ -165,7 +165,7 @@ export default class App {
             this.calculate();
         });
 
-        document.body.append(this.UINode);
+        targetNode.append(this.UINode);
     }
 
     addValue(value) {

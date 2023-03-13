@@ -6,4 +6,4 @@ import './sass/main.scss';
 
 const calculator = new Calculator();
 const app = new App(calculator, () => renderCalculator(buttonsLayout.flat()));
-app.createUI();
+app.createUI(document.body);
