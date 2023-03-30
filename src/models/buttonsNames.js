@@ -29,7 +29,7 @@ const buttonsNames = {
     reverse: '1/x',
     squareRoot: `\u{0221A}x`,
     cubeRoot: `\u{0221B}x`,
-    powerRoot: `x\u{0221A}y`,
+    powerRoot: `x^(1/y)`,
     factorial: '!x',
     returnToPrevResult: 'return to prev calc',
 };
