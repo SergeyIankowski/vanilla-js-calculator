@@ -18,20 +18,17 @@ import {
     MemorySubstractCommand,
     MemoryClearCommand,
 } from './commands';
+import Invoker from './invoker/Invoker';
 import buttonsNames from './models/buttonsNames';
 import numberKeys from './models/numberKeys';
 import operatorsStrings from './models/operatorsStrings';
 import addClickCallbackToNode from './utils/addCallbackToNode';
 import getNamesArrFromValues from './utils/getNamesArrFromValues';
 
-export default class App {
+export default class App extends Invoker {
     constructor(calculator, createUINodeCallback) {
-        this.calculator = calculator;
+        super(calculator);
         this.UINode = createUINodeCallback();
-
-        this.firstValue = null;
-        this.command = null;
-        this.secondValue = null;
     }
 
     createUI(targetNode) {
@@ -166,66 +163,6 @@ export default class App {
         });
 
         targetNode.append(this.UINode);
-    }
-
-    addValue(value) {
-        const strValue = `${value}`;
-        if (this.firstValue === '0') {
-            this.firstValue = '';
-        }
-        if (this.command && this.firstValue) {
-            this.secondValue = this.secondValue ? `${this.secondValue}${strValue}` : strValue;
-            return;
-        }
-        this.firstValue = this.firstValue ? `${this.firstValue}${strValue}` : strValue;
-    }
-
-    addCommand(command) {
-        if (this.command && this.secondValue) this.calculate();
-        this.command = command;
-        this.reRenderBoard();
-    }
-
-    calculate() {
-        const Command = this.command;
-
-        if (!this.command) return;
-        if (this.command.needSecondValue() && this.secondValue) {
-            this.calculator.executeCommand(new Command(this.firstValue, this.secondValue));
-            this.refreshAppValues();
-        } else if (!this.command.needSecondValue()) {
-            this.calculator.executeCommand(new Command(this.firstValue));
-            this.refreshAppValues();
-        }
-        this.reRenderBoard();
-    }
-
-    clean() {
-        this.firstValue = null;
-        this.command = null;
-        this.secondValue = null;
-    }
-
-    pastDotToValue() {
-        if (this.secondValue && !`${this.secondValue}`.includes('.')) {
-            this.secondValue += '.';
-        } else if (!`${this.firstValue}`.includes('.')) {
-            this.firstValue += '.';
-        }
-    }
-
-    changeSign() {
-        if (this.secondValue) {
-            this.secondValue *= -1;
-        } else {
-            this.firstValue *= -1;
-        }
-    }
-
-    refreshAppValues() {
-        this.firstValue = this.calculator.value;
-        this.command = null;
-        this.secondValue = null;
     }
 
     reRenderBoard() {
