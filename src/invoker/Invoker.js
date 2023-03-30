@@ -22,7 +22,6 @@ export default class Invoker {
     addCommand(command) {
         if (this.command && this.secondValue) this.calculate();
         this.command = command;
-        this.reRenderBoard();
     }
 
     calculate() {
@@ -36,7 +35,6 @@ export default class Invoker {
             this.calculator.executeCommand(new Command(this.firstValue));
             this.refreshAppValues();
         }
-        this.reRenderBoard();
     }
 
     clean() {

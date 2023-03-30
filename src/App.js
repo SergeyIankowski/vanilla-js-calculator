@@ -85,6 +85,7 @@ export default class App extends Invoker {
         const equal = setBtnSelector('equal');
         addClickCallbackToNode(this.UINode, equal, () => {
             this.calculate();
+            this.reRenderBoard();
         });
 
         const dot = setBtnSelector('dot');
@@ -100,66 +101,88 @@ export default class App extends Invoker {
         });
 
         const plus = setBtnSelector('plus');
-        addClickCallbackToNode(this.UINode, plus, () => this.addCommand(AddCommand));
+        addClickCallbackToNode(this.UINode, plus, () => {
+            this.addCommand(AddCommand);
+            this.reRenderBoard();
+        });
 
         const minus = setBtnSelector('minus');
-        addClickCallbackToNode(this.UINode, minus, () => this.addCommand(SubstractCommand));
+        addClickCallbackToNode(this.UINode, minus, () => {
+            this.addCommand(SubstractCommand);
+            this.reRenderBoard();
+        });
 
         const multiply = setBtnSelector('multiply');
-        addClickCallbackToNode(this.UINode, multiply, () => this.addCommand(MultiplyCommand));
+        addClickCallbackToNode(this.UINode, multiply, () => {
+            this.addCommand(MultiplyCommand);
+            this.reRenderBoard();
+        });
 
         const divide = setBtnSelector('divide');
-        addClickCallbackToNode(this.UINode, divide, () => this.addCommand(DivideCommand));
+        addClickCallbackToNode(this.UINode, divide, () => {
+            this.addCommand(DivideCommand);
+            this.reRenderBoard();
+        });
 
         const percent = setBtnSelector('percent');
         addClickCallbackToNode(this.UINode, percent, () => {
             this.addCommand(PercentCommand);
             this.calculate();
+            this.reRenderBoard();
         });
 
         const square = setBtnSelector('square');
         addClickCallbackToNode(this.UINode, square, () => {
             this.addCommand(SquareCommand);
             this.calculate();
+            this.reRenderBoard();
         });
         const cube = setBtnSelector('cube');
         addClickCallbackToNode(this.UINode, cube, () => {
             this.addCommand(CubeCommand);
             this.calculate();
+            this.reRenderBoard();
         });
         const numberPower = setBtnSelector('numberPower');
         addClickCallbackToNode(this.UINode, numberPower, () => {
             this.addCommand(AnyPowerCommand);
             this.calculate();
+            this.reRenderBoard();
         });
         const tenPower = setBtnSelector('tenPower');
         addClickCallbackToNode(this.UINode, tenPower, () => {
             this.addCommand(TenPowerCommand);
             this.calculate();
+            this.reRenderBoard();
         });
         const reverse = setBtnSelector('reverse');
         addClickCallbackToNode(this.UINode, reverse, () => {
             this.addCommand(ReverseNumberCommand);
             this.calculate();
+            this.reRenderBoard();
         });
         const squareRoot = setBtnSelector('squareRoot');
         addClickCallbackToNode(this.UINode, squareRoot, () => {
             this.addCommand(SquareRootCommand);
             this.calculate();
+            this.reRenderBoard();
         });
         const cubeRoot = setBtnSelector('cubeRoot');
         addClickCallbackToNode(this.UINode, cubeRoot, () => {
             this.addCommand(CubeRootCommand);
             this.calculate();
+            this.reRenderBoard();
         });
         const powerRoot = setBtnSelector('powerRoot');
         addClickCallbackToNode(this.UINode, powerRoot, () => {
             this.addCommand(PowerRootCommand);
+            this.reRenderBoard();
         });
         const factorial = setBtnSelector('factorial');
         addClickCallbackToNode(this.UINode, factorial, () => {
             this.addCommand(FactorialCommand);
             this.calculate();
+            this.reRenderBoard();
         });
 
         targetNode.append(this.UINode);
