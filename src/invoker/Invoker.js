@@ -31,7 +31,9 @@ export default class Invoker {
         if (this.command.needSecondValue() && this.secondValue) {
             this.calculator.executeCommand(new Command(this.firstValue, this.secondValue));
             this.refreshAppValues();
-        } else if (!this.command.needSecondValue()) {
+            return;
+        }
+        if (!this.command.needSecondValue()) {
             this.calculator.executeCommand(new Command(this.firstValue));
             this.refreshAppValues();
         }
@@ -44,9 +46,11 @@ export default class Invoker {
     }
 
     pastDotToValue() {
-        if (this.secondValue && !`${this.secondValue}`.includes('.')) {
+        if (this.secondValue && !this.secondValue.toString().includes('.')) {
             this.secondValue += '.';
-        } else if (!`${this.firstValue}`.includes('.')) {
+            return;
+        }
+        if (!this.firstValue.toString().includes('.')) {
             this.firstValue += '.';
         }
     }
