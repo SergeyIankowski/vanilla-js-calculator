@@ -3,6 +3,8 @@
 @import './base/reset';
 @import './base/global';
 
+@import './mixins/font';
+
 @import './layout/wrapper';
 @import './layout/themes-layout';
 @import './layout/calculator-layout';

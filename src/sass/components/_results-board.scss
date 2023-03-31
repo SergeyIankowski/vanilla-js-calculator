@@ -2,9 +2,9 @@
     width: 350px;
 }
 .results-board__title {
-    font: normal bold 30px/120% 'Roboto', sans-serif;
+    @include font(30px);
 }
 
 .results-board__field {
-    font: normal bold 20px/120% 'Roboto', sans-serif;
+    @include font(20px);
 }

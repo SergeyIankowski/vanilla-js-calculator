@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
 
-    font: normal bold 20px/120% 'Roboto', sans-serif;
+    @include font(20px);
     border: 0;
     cursor: pointer;
     text-align: center;
@@ -23,17 +23,17 @@
 }
 @media (max-width: $breakpoint-two) {
     .calculator__button {
-        font: normal bold 30px/120% 'Roboto', sans-serif;
+        @include font(30px);
     }
 }
 
 @media (max-width: $breakpoint-three) {
     .calculator__button {
-        font: normal bold 20px/120% 'Roboto', sans-serif;
+        @include font(20px);
     }
 }
 @media (max-width: $breakpoint-four) {
     .calculator__button {
-        font: normal bold 15px/120% 'Roboto', sans-serif;
+        @include font(15px);
     }
 }

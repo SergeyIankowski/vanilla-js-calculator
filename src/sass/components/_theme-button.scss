@@ -1,5 +1,5 @@
 .theme-button {
-    font: normal bold 15px/110% 'Roboto', sans-serif;
+    @include font(15px);
     padding: 5px;
     border-radius: 10px;
     border: 0;
