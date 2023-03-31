@@ -1,7 +1,7 @@
 export default class AbstractCommand {
     constructor(stringFirstValue, stringSecondValue) {
-        this.firstValue = +stringFirstValue;
-        this.secondValue = +stringSecondValue;
+        this.firstValue = parseInt(stringFirstValue, 10);
+        this.secondValue = parseInt(stringSecondValue, 10);
     }
 
     execute() {
