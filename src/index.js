@@ -1,4 +1,4 @@
-import App from './App';
+import { App } from './App';
 import Calculator from './calculator/Calculator';
 import buttonsLayout from './models/buttonsLayout';
 import renderCalculator from './utils/renderCalculator';

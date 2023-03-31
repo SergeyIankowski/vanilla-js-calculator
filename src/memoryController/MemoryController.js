@@ -1,4 +1,4 @@
-import { savedValue } from '../models/localStorageFields';
+import { savedValue } from '../models/localStorageKeys';
 
 class MemoryController {
     static addValueToMemory(value) {

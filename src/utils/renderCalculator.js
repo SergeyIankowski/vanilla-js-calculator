@@ -1,5 +1,5 @@
 import buttonsNames from '../models/buttonsNames';
-import { theme } from '../models/localStorageFields';
+import { theme } from '../models/localStorageKeys';
 import numberKeys from '../models/numberKeys';
 import { wideKeys, extraWideKeys } from '../models/wideKeys';
 

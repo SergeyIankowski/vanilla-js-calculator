@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import {
     AddCommand,
     CubeCommand,
@@ -25,7 +26,7 @@ import operatorsStrings from './models/operatorsStrings';
 import addClickCallbackToNode from './utils/addCallbackToNode';
 import getNamesArrFromValues from './utils/getNamesArrFromValues';
 
-export default class App extends Invoker {
+export class App extends Invoker {
     constructor(calculator, createUINodeCallback) {
         super(calculator);
         this.UINode = createUINodeCallback();
