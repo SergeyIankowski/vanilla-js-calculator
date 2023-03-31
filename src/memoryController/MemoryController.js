@@ -1,10 +1,12 @@
 import { savedValue } from '../models/localStorageKeys';
+import calculateSubstraction from '../utils/calculate-functions/calculateSubstraction';
+import calculateSum from '../utils/calculate-functions/calculateSum';
 
 class MemoryController {
     static addValueToMemory(value) {
         if (localStorage.getItem(savedValue)) {
             const prevStr = localStorage.getItem(savedValue);
-            const cur = Number(value) + Number(prevStr);
+            const cur = calculateSum(Number(value), Number(prevStr));
             localStorage.setItem(savedValue, cur.toString());
             return;
         }
@@ -15,7 +17,7 @@ class MemoryController {
     static substractValueFromMemory(value) {
         if (localStorage.getItem(savedValue)) {
             const prevStr = localStorage.getItem(savedValue);
-            const cur = Number(prevStr) - Number(value);
+            const cur = calculateSubstraction(Number(prevStr), Number(value));
             localStorage.setItem(savedValue, cur.toString());
             return;
         }
