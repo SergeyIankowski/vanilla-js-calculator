@@ -1,8 +1,9 @@
+import MemoryController from '../memoryController/MemoryController';
 import AbstractCommand from './AbstractCommand';
 
 export default class MemoryClearCommand extends AbstractCommand {
     execute() {
-        if (localStorage.getItem('memoryValue')) localStorage.clear();
+        MemoryController.clearMemoryValue();
 
         return `${this.firstValue}`;
     }
