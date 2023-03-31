@@ -1,5 +1,5 @@
 const deletePeriodicDigits = (strNumber) => {
-    const num = parseInt(strNumber, 10);
+    const num = Number(strNumber);
     let roundedNumbStr = num.toFixed(6);
     while (
         roundedNumbStr.includes('.') &&
@@ -9,7 +9,7 @@ const deletePeriodicDigits = (strNumber) => {
     ) {
         roundedNumbStr = roundedNumbStr.substring(0, roundedNumbStr.length - 1);
     }
-    const roundedNumb = parseInt(roundedNumbStr, 10);
+    const roundedNumb = Number(roundedNumbStr);
     return roundedNumb;
 };
 

@@ -4,7 +4,7 @@ class MemoryController {
     static addValueToMemory(value) {
         if (localStorage.getItem(savedValue)) {
             const prevStr = localStorage.getItem(savedValue);
-            const cur = parseInt(value, 10) + parseInt(prevStr, 10);
+            const cur = Number(value) + Number(prevStr);
             localStorage.setItem(savedValue, cur.toString());
             return;
         }
@@ -15,7 +15,7 @@ class MemoryController {
     static substractValueFromMemory(value) {
         if (localStorage.getItem(savedValue)) {
             const prevStr = localStorage.getItem(savedValue);
-            const cur = parseInt(prevStr, 10) - parseInt(value, 10);
+            const cur = Number(prevStr) - Number(value);
             localStorage.setItem(savedValue, cur.toString());
             return;
         }
