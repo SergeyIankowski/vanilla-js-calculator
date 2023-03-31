@@ -1,4 +1,5 @@
 import buttonsNames from '../models/buttonsNames';
+import { theme } from '../models/localStorageFields';
 import numberKeys from '../models/numberKeys';
 import { wideKeys, extraWideKeys } from '../models/wideKeys';
 
@@ -15,7 +16,7 @@ export default function renderCalculator(arr) {
         themeButton.classList.add('themes-container__item', 'theme-button', `theme-button_${item}`);
         themeButton.onclick = () => {
             calculator.className = `calculator calculator-layout calculator_${item}`;
-            localStorage.setItem('theme', item);
+            localStorage.setItem(theme, item);
         };
         themeButton.innerText = `${item.slice(0, 5)} ${item.at(-1)}`;
         themes.append(themeButton);
