@@ -1,33 +1,32 @@
 .show-board {
-  height: 80px;
-  padding-right: 5px;
-  font: normal bold 30px/120% 'Roboto', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-
+    height: 80px;
+    padding-right: 5px;
+    font: normal bold 30px/120% 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 .show-board__top-container {
-  display: flex;
-  font: normal bold 15px/120% 'Roboto', sans-serif;
-  color: grey;
+    display: flex;
+    font: normal bold 15px/120% 'Roboto', sans-serif;
+    color: grey;
 }
 @media (max-width: $breakpoint-two) {
-  .show-board {
-    height: 40%;
-    font: normal bold 50px/120% 'Roboto', sans-serif;
-  }
-  .show-board__top-container {
-    font: normal bold 25px/120% 'Roboto', sans-serif;
-}
+    .show-board {
+        height: 40%;
+        font: normal bold 50px/120% 'Roboto', sans-serif;
+    }
+    .show-board__top-container {
+        font: normal bold 25px/120% 'Roboto', sans-serif;
+    }
 }
 @media (max-width: $breakpoint-four) {
-  .show-board {
-    height: 30%;
-    font: normal bold 30px/120% 'Roboto', sans-serif;
-  }
-  .show-board__top-container {
-    font: normal bold 15px/120% 'Roboto', sans-serif;
-}
+    .show-board {
+        height: 30%;
+        font: normal bold 30px/120% 'Roboto', sans-serif;
+    }
+    .show-board__top-container {
+        font: normal bold 15px/120% 'Roboto', sans-serif;
+    }
 }
