@@ -1,0 +1,32 @@
+.show-board {
+    height: 80px;
+    padding-right: 5px;
+    @include font(30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.show-board__top-container {
+    display: flex;
+    @include font(15px);
+    color: grey;
+}
+@media (max-width: $breakpoint-two) {
+    .show-board {
+        height: 40%;
+        @include font(50px);
+    }
+    .show-board__top-container {
+        @include font(25px);
+    }
+}
+@media (max-width: $breakpoint-four) {
+    .show-board {
+        height: 30%;
+        @include font(30px);
+    }
+    .show-board__top-container {
+        @include font(15px);
+    }
+}

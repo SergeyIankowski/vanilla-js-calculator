@@ -1,0 +1,39 @@
+.calculator__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include font(20px);
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+        filter: invert(0.25);
+    }
+    &:active {
+        filter: opacity(0.5);
+    }
+}
+.calculator__button_wide {
+    grid-column: span 2;
+}
+.calculator__button_extra-wide {
+    grid-column: span 4;
+}
+@media (max-width: $breakpoint-two) {
+    .calculator__button {
+        @include font(30px);
+    }
+}
+
+@media (max-width: $breakpoint-three) {
+    .calculator__button {
+        @include font(20px);
+    }
+}
+@media (max-width: $breakpoint-four) {
+    .calculator__button {
+        @include font(15px);
+    }
+}

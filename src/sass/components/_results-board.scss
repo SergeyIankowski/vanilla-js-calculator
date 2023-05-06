@@ -1,0 +1,10 @@
+.results-board {
+    width: 350px;
+}
+.results-board__title {
+    @include font(30px);
+}
+
+.results-board__field {
+    @include font(20px);
+}

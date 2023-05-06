@@ -1,0 +1,30 @@
+.theme-button {
+    @include font(15px);
+    padding: 5px;
+    border-radius: 10px;
+    border: 0;
+    height: 30px;
+    cursor: pointer;
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover,
+    &:active {
+        filter: contrast(0.5);
+    }
+}
+.theme-button_theme-1 {
+    background-color: $calculator-color-theme-1;
+}
+.theme-button_theme-2 {
+    background-color: $calculator-color-theme-2;
+}
+.theme-button_theme-3 {
+    background-color: $calculator-color-theme-3;
+}
+.theme-button_theme-4 {
+    background-color: $calculator-color-theme-4;
+}
