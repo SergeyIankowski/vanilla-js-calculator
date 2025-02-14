@@ -27,11 +27,11 @@ const buttonsNames = {
     numberPower: 'x^y',
     tenPower: '10^x',
     reverse: '1/x',
-    squareRoot: `\u{0221A}x`,
-    cubeRoot: `\u{0221B}x`,
-    powerRoot: `x^(1/y)`,
+    squareRoot: '\u{0221A}x',
+    cubeRoot: '\u{0221B}x',
+    powerRoot: 'x^(1/y)',
     factorial: '!x',
     returnToPrevResult: 'return to prev calc',
-};
+}
 
-export default buttonsNames;
+export default buttonsNames

@@ -1,4 +1,4 @@
-import buttonsNames from './buttonsNames';
+import buttonsNames from './buttonsNames'
 
 const buttonsLayout = [
     [
@@ -48,6 +48,6 @@ const buttonsLayout = [
         buttonsNames.dot,
         buttonsNames.equal,
     ],
-];
+]
 
-export default buttonsLayout;
+export default buttonsLayout

@@ -1,7 +1,7 @@
-import deletePeriodicDigits from '../deletePeriodicDigits';
+import deletePeriodicDigits from '../deletePeriodicDigits'
 
 const reverseValue = (value) => {
-    const res = 1 / value;
-    return deletePeriodicDigits(res);
-};
-export default reverseValue;
+    const res = 1 / value
+    return deletePeriodicDigits(res)
+}
+export default reverseValue

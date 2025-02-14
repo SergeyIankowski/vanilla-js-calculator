@@ -1,4 +1,4 @@
-import buttonsNames from './buttonsNames';
+import buttonsNames from './buttonsNames'
 
 const numberKeys = [
     buttonsNames.zero,
@@ -11,6 +11,6 @@ const numberKeys = [
     buttonsNames.seven,
     buttonsNames.eight,
     buttonsNames.nine,
-];
+]
 
-export default numberKeys;
+export default numberKeys

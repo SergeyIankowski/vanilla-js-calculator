@@ -1,4 +1,4 @@
-import buttonsNames from './buttonsNames';
+import buttonsNames from './buttonsNames'
 
 export const wideKeys = [
     buttonsNames.memoryAdd,
@@ -8,6 +8,6 @@ export const wideKeys = [
     buttonsNames.zero,
     buttonsNames.factorial,
     buttonsNames.returnToPrevResult,
-];
+]
 
-export const extraWideKeys = [];
+export const extraWideKeys = []

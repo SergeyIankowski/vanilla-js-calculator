@@ -1,2 +1,2 @@
-export const savedValue = 'memoryValue';
-export const theme = 'theme';
+export const savedValue = 'memoryValue'
+export const theme = 'theme'

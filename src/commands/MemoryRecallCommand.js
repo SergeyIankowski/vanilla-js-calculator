@@ -1,14 +1,15 @@
-import MemoryController from '../memoryController/MemoryController';
-import AbstractCommand from './AbstractCommand';
+import MemoryController from '../memoryController/MemoryController'
+
+import AbstractCommand from './AbstractCommand'
 
 export default class MemoryRecallCommand extends AbstractCommand {
     execute() {
-        const current = MemoryController.recallMemoryValue(this.firstValue);
+        const current = MemoryController.recallMemoryValue(this.firstValue)
 
-        return `${current}`;
+        return `${current}`
     }
 
     static needSecondValue() {
-        return false;
+        return false
     }
 }
