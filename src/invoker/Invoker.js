@@ -19,6 +19,7 @@ export default class Invoker {
         this.firstValue = this.firstValue ? `${this.firstValue}${strValue}` : strValue;
     }
 
+    // comment to check ssh connection
     addCommand(command) {
         if (this.command && this.secondValue) this.calculate();
         this.command = command;
